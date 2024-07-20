@@ -19,7 +19,7 @@
     <linkfile src="static_analysis" dest="build/static_analysis" />
   </project>
   <project path="msm-kernel" name="android_kernel_samsung_a05s" clone-depth="1" remote="carlodandan" />
-  <project path="common" name="kernel/common" remote="aosp" revision="android13-5.15-2023-10" upstream="android13-5.15-2023-10" dest-branch="android13-5.15-2023-10" />
+  <project path="common" name="android_kernel_common_a05s" remote="carlodandan" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" />
   <project path="kernel/configs" name="kernel/configs" remote="aosp" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="deede4fddac274575cb0e26498fc0f4a718229fb" upstream="android13-5.15" dest-branch="android13-5.15" />
