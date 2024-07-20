@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
-  <remote name="crypton" fetch="https://github.com/cd-Crypton" revision="android-13" />
+  <remote name="carlodandan" fetch="https://github.com/carlodandan" revision="android-13" />
   <default revision="master-kernel-build-2022" remote="aosp" sync-j="4" />
   <superproject name="kernel/superproject" remote="aosp" revision="common-android13-5.15-2023-10" />
   <project path="build/kernel" name="kernel/build" remote="aosp" >
@@ -18,9 +18,8 @@
     <linkfile src="abi" dest="build/abi" />
     <linkfile src="static_analysis" dest="build/static_analysis" />
   </project>
-  <project path="common" name="android_kernel_samsung_bengal-5.15" clone-depth="1" remote="crypton">
-    <linkfile src="." dest=".source_date_epoch_dir" />
-  </project>
+  <project path="msm-kernel" name="android_kernel_samsung_a05s" clone-depth="1" remote="carlodandan" />
+  <project path="common" name="kernel/common" remote="aosp" revision="android13-5.15-2023-10" upstream="android13-5.15-2023-10" dest-branch="android13-5.15-2023-10" />
   <project path="kernel/tests" name="kernel/tests" remote="aosp" />
   <project path="kernel/configs" name="kernel/configs" remote="aosp" />
   <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="deede4fddac274575cb0e26498fc0f4a718229fb" upstream="android13-5.15" dest-branch="android13-5.15" />
@@ -36,4 +35,5 @@
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
   <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" />
   <project path="external/python/absl-py" name="platform/external/python/absl-py" remote="aosp" />
+  <project path="external/dtc" name="android_platform_external_dtc" remote="carlodandan" />
 </manifest>
