@@ -35,5 +35,5 @@
   <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
   <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" />
   <project path="external/python/absl-py" name="platform/external/python/absl-py" remote="aosp" />
-  <project path="external/dtc" name="platform/external/dtc" remote="aosp" revision="android13-release" />
+  <project path="external/dtc" name="android_kernel_external_dtc" remote="carlodandan" revision="A13" />
 </manifest>
