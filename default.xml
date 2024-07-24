@@ -3,37 +3,16 @@
   <remote name="aosp" fetch="https://android.googlesource.com" review="https://android-review.googlesource.com/" />
   <remote name="carlodandan" fetch="https://github.com/carlodandan" revision="A13" />
   <default revision="master-kernel-build-2022" remote="aosp" sync-j="4" />
-  <superproject name="kernel/superproject" remote="aosp" revision="common-android13-5.15-2023-10" />
-  <project path="build/kernel" name="kernel/build" remote="aosp" >
-    <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
-    <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
-    <linkfile src="build.sh" dest="build/build.sh" />
-    <linkfile src="build_abi.sh" dest="build/build_abi.sh" />
-    <linkfile src="build_test.sh" dest="build/build_test.sh" />
-    <linkfile src="build_utils.sh" dest="build/build_utils.sh" />
-    <linkfile src="config.sh" dest="build/config.sh" />
-    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
-    <linkfile src="_setup_env.sh" dest="build/_setup_env.sh" />
-    <linkfile src="multi-switcher.sh" dest="build/multi-switcher.sh" />
-    <linkfile src="abi" dest="build/abi" />
-    <linkfile src="static_analysis" dest="build/static_analysis" />
-  </project>
-  <project path="msm-kernel" name="android_kernel_samsung_a05s" clone-depth="1" remote="carlodandan" sync-s="true" />
-  <project path="common" name="android_kernel_common_a05s" remote="carlodandan" sync-s="true" />
-  <project path="kernel/tests" name="kernel/tests" remote="aosp" />
-  <project path="kernel/configs" name="kernel/configs" remote="aosp" />
-  <project path="common-modules/virtual-device" name="kernel/common-modules/virtual-device" revision="deede4fddac274575cb0e26498fc0f4a718229fb" upstream="android13-5.15" dest-branch="android13-5.15" />
-  <project path="prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" />
-  <project path="tools/mkbootimg" name="platform/system/tools/mkbootimg" remote="aosp" />
-  <project path="prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" remote="aosp" />
-  <project path="prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" clone-depth="1" remote="aosp" />
-  <project path="external/bazel-skylib" name="platform/external/bazel-skylib" remote="aosp" />
-  <project path="build/bazel_common_rules" name="platform/build/bazel_common_rules" remote="aosp" />
-  <project path="external/stardoc" name="platform/external/stardoc" remote="aosp" />
-  <project path="external/python/absl-py" name="platform/external/python/absl-py" remote="aosp" />
-  <project path="external/dtc" name="android_platform_external_dtc" remote="carlodandan" revision="A13" />
+
+  <project path="." name="platform_a05s" clone-depth="1" remote="carlodandan" />
+  <project path="kernel_platform/msm-kernel" name="android_kernel_samsung_a05s" clone-depth="1" remote="carlodandan" sync-s="true" />
+  <project path="kernel_platform/common" name="android_kernel_common_a05s" remote="carlodandan" sync-s="true" />
+
+  <project path="kernel_platform/prebuilts/clang/host/linux-x86" name="platform/prebuilts/clang/host/linux-x86" clone-depth="1" remote="aosp" />
+  <project path="kernel_platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="platform/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" clone-depth="1" remote="aosp" />
+  <project path="kernel_platform/prebuilts/build-tools" name="platform/prebuilts/build-tools" clone-depth="1" remote="aosp" />
+  <project path="kernel_platform/prebuilts/kernel-build-tools" name="kernel/prebuilts/build-tools" clone-depth="1" remote="aosp" />
+  <project path="kernel_platform/prebuilts/bazel/linux-x86_64" name="platform/prebuilts/bazel/linux-x86_64" clone-depth="1" remote="aosp" />
+  <project path="kernel_platform/prebuilts/jdk/jdk11" name="platform/prebuilts/jdk/jdk11" clone-depth="1" remote="aosp" />
+  <project path="kernel_platform/prebuilts/ndk-r23" name="toolchain/prebuilts/ndk/r23" clone-depth="1" remote="aosp" />
 </manifest>
