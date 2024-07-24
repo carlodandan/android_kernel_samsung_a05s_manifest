@@ -16,4 +16,10 @@ repo sync $(nproc --all) --force-sync
 bash build_kernel_GKI.sh
 ```
 ### Notes
-For Kernel Image, Boot Image, Kernel Modules and other files, just check `out/msm-kernel-m269-gki/dist` directory.
+* For Kernel Image, Boot Image, Kernel Modules and other files, just check `out/msm-kernel-m269-gki/dist` directory.
+* For KernelSU implementation, you need to run extra command inside common folder before step 3:
+```
+cd kernel_platform/common
+curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -
+cd ../..
+```
